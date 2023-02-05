@@ -1,4 +1,4 @@
-# -developer-challenge-pay-dates-thusara-updated-with-composer
+# developer-challenge-pay-dates-thusara-updated-with-composer
 This repository contains the updated solution (adding composer to handle classes) for fictional company to determine the dates they need to pay salaries to their sales department.
 
 # Prerequisites
@@ -18,6 +18,7 @@ This repository contains the updated solution (adding composer to handle classes
 * Give a out file name to desired_output_file_name as command line argument.
 * If not a default file name is used to generate the file in the format "payment-date-{current_year}.csv".
 * Output file will create inside the project directory (developer-challenge-pay-dates-thusara-updated-with-composer)
+* Output file contains payment dates from the current month onwards (According to requiremnt: containing the payment dates for the remainder of this year). 
 
 ### Reasons to update with Composer:
 * Namespacing: Composer makes it easier to manage dependencies by providing namespacing and autoloading support.
