@@ -10,8 +10,9 @@ class BonusService
     // If 15th of a month a weekday returns that day.
     // If not, returns next Wednesday from 15th.
     
-    function getBonusPaymentDate(\DateTime $date, int $month, int $year): string
+    public function getBonusPaymentDate(int $month, int $year): string
     {
+        $date = new \DateTime();
         $date->setDate($year, $month, 15);
         $isWeekday = (int) $date->format('w');
 

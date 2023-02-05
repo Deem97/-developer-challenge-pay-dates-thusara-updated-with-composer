@@ -10,8 +10,9 @@ class SalaryService
     // If the payment day is a weekday, return it
     // If not, return the last weekday before the end of the month
 
-    function getSalaryPaymentDate(\DateTime $date, int $month, int $year): string
+    function getSalaryPaymentDate(int $month, int $year): string
     {
+        $date = new \DateTime();
         $date->setDate($year, $month, 1);
         $date->modify('last day of this month');
         $isWeekday = (int) $date->format('w');

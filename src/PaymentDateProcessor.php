@@ -16,14 +16,14 @@ class PaymentDateProcessor
     //If a filename is provided in the command line arguments, that name is used for the exported CSV file.
     //Otherwise, a default file name is generated in the format "payment-date-{current_year}.csv".
     
-    function processPaymentDates(): void
+    public function processPaymentDates(): void
     {
         global $argv;
 
         $currentYear = (new \DateTime())->format('Y');
         $fileName = array_key_exists(1, $argv) ? $argv[1].".csv" : "payment-date-$currentYear.csv";
 
-        $data = $this->generatedPaymentDates();
+        $data = $this->generatePaymentDates();
 
         $dataExportService = new DataExportService();
         $dataExportService->exportCSV($fileName, $data);
@@ -31,7 +31,7 @@ class PaymentDateProcessor
 
     //This function generates payment dates for salary and bonus payments.
 
-    function generatedPaymentDates(): array
+    public function generatePaymentDates(): array
     {
         $date = new \DateTime();
         $currentYear = (int)$date->format('Y');
@@ -41,10 +41,11 @@ class PaymentDateProcessor
         $bonusService = new BonusService();
 
         $data['columns'] = ['Month Name', 'Salary Payment Date', 'Bonus Payment Date'];
+
         for ($month = $currentMonth; $month <= 12; $month++) {
             $monthName = $date->setDate($currentYear, $month, 1)->format('F');
-            $salaryPaymentDate = $salaryService->getSalaryPaymentDate($date, $month, $currentYear);
-            $bonusPaymentDate = $bonusService->getBonusPaymentDate($date, $month, $currentYear);
+            $salaryPaymentDate = $salaryService->getSalaryPaymentDate($month, $currentYear);
+            $bonusPaymentDate = $bonusService->getBonusPaymentDate($month, $currentYear);
 
             $data['rows'][] = [$monthName, $salaryPaymentDate, $bonusPaymentDate];
         }
@@ -54,3 +55,4 @@ class PaymentDateProcessor
 }
 
 (new PaymentDateProcessor())->processPaymentDates();
+

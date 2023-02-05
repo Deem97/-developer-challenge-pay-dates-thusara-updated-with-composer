@@ -9,7 +9,7 @@ class DataExportService
     // Exporting CSV data
     // This function takes filename, an array of data and creates a CSV file
     
-    function exportCSV(string $fileName, array $data): void
+    public function exportCSV(string $fileName, array $data): void
     {
         try {
             $filePath = __DIR__ . "/../../" . $fileName;
