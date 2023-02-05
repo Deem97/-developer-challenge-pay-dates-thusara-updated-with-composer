@@ -1,0 +1,17 @@
+{
+    "name": "thusara/salary-dates-processor",
+    "description": "CLI tool to calculate salary payment dates for sales department in a fictional company.",
+    "autoload": {
+        "psr-4": {
+            "Thusara\\SalaryDatesProcessor\\": "src/",
+            "Thusara\\SalaryDatesProcessor\\Services\\": "src/service/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Deem97",
+            "email": "thdeema@gmail.com"
+        }
+    ],
+    "require": {}
+}
