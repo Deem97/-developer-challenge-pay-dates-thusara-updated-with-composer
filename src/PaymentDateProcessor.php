@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Thusara\SalaryDatesProcessor;
+namespace App;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use Thusara\SalaryDatesProcessor\Services\BonusService;
-use Thusara\SalaryDatesProcessor\Services\DataExportService;
-use Thusara\SalaryDatesProcessor\Services\SalaryService;
+use App\Services\BonusService;
+use App\Services\DataExportService;
+use App\Services\SalaryService;
 
 class PaymentDateProcessor
 {

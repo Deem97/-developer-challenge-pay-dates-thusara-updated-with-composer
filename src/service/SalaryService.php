@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Thusara\SalaryDatesProcessor\Services;
+namespace App\Services;
 
 class SalaryService
 {

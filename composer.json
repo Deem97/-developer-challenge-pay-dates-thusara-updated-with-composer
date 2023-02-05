@@ -3,8 +3,8 @@
     "description": "CLI tool to calculate salary payment dates for sales department in a fictional company.",
     "autoload": {
         "psr-4": {
-            "Thusara\\SalaryDatesProcessor\\": "src/",
-            "Thusara\\SalaryDatesProcessor\\Services\\": "src/service/"
+            "App\\": "src/",
+            "App\\Services\\": "src/service/"
         }
     },
     "authors": [
